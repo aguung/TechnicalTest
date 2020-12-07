@@ -1,0 +1,3 @@
+include ':berita'
+include ':app'
+rootProject.name = "TechnicalTest"
