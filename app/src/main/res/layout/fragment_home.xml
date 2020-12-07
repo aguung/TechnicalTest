@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/background"
-        tools:context=".ui.screen.HomeFragment"
+        tools:context=".ui.screen.home.HomeFragment"
         >
     <LinearLayout
             android:layout_width="match_parent"
@@ -282,6 +282,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/viewPager"
                     />
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </LinearLayout>
 
 </androidx.core.widget.NestedScrollView>

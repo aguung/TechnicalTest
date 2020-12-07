@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-parcelize'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 30
@@ -14,7 +15,11 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField ("String", "SERVER_URL", "\"http://newsapi.org/v2/\"")
+        buildConfigField ("String", "API_KEY", "\"ba8ac9a280bf47fbbc528f151a8f44e9\"")
     }
+
 
     buildTypes {
         release {
@@ -35,6 +40,11 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
+
+//    lintOptions {
+//        abortOnError false
+//    }
+
     dynamicFeatures = [':berita']
 }
 
@@ -47,10 +57,35 @@ dependencies {
     implementation 'androidx.viewpager2:viewpager2:1.0.0'
     implementation 'com.google.android.material:material:1.3.0-alpha04'
 
+    //Navigation Jetpack
     implementation 'androidx.navigation:navigation-fragment-ktx:2.3.1'
     implementation 'androidx.navigation:navigation-ui-ktx:2.3.1'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    //Retrofit and Moshi
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-moshi:2.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
+
+    //Dependency Injection
+    implementation 'com.google.dagger:dagger:2.29.1'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    kapt 'com.google.dagger:dagger-compiler:2.29.1'
+    implementation 'com.google.dagger:dagger-android:2.29.1'
+    kapt 'com.google.dagger:dagger-android-processor:2.29.1'
+    implementation 'com.google.dagger:dagger-android-support:2.29.1'
+    kapt 'com.google.dagger:dagger-android-support:2.29.1'
+
+    //Kotlin Moshi
+    implementation 'se.ansman.kotshi:api:2.2.3'
+    kapt 'se.ansman.kotshi:compiler:2.2.3'
+
+    //Lottie Animation
+    implementation 'com.airbnb.android:lottie:3.4.2'
+
+    //Shimmet Facebook
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
 
     testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'

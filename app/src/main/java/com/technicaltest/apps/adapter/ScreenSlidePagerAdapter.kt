@@ -3,7 +3,7 @@ package com.technicaltest.apps.adapter
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.technicaltest.apps.ui.screen.BannerFragment
+import com.technicaltest.apps.ui.screen.home.BannerFragment
 
 class ScreenSlidePagerAdapter(
     fragment: Fragment,

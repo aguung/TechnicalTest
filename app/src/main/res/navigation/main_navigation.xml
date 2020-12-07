@@ -4,6 +4,6 @@
             xmlns:tools="http://schemas.android.com/tools" android:id="@+id/main_navigation"
             app:startDestination="@id/homeFragment">
 
-    <fragment android:id="@+id/homeFragment" android:name="com.technicaltest.apps.ui.screen.HomeFragment"
+    <fragment android:id="@+id/homeFragment" android:name="com.technicaltest.apps.ui.screen.home.HomeFragment"
               android:label="fragment_home" tools:layout="@layout/fragment_home"/>
 </navigation>

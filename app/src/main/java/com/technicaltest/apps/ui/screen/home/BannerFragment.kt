@@ -1,4 +1,4 @@
-package com.technicaltest.apps.ui.screen
+package com.technicaltest.apps.ui.screen.home
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
